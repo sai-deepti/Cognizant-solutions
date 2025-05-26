@@ -1,0 +1,333 @@
+Core Java:
+
+1. Hello world program
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+2. Simple Calculator
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        double a = sc.nextDouble();
+        System.out.print("Enter second number: ");
+        double b = sc.nextDouble();
+
+        System.out.println("Choose operation (+, -, *, /): ");
+        char op = sc.next().charAt(0);
+
+        double result = 0;
+        switch (op) {
+            case '+': result = a + b; break;
+            case '-': result = a - b; break;
+            case '*': result = a * b; break;
+            case '/': result = b != 0 ? a / b : 0; break;
+            default: System.out.println("Invalid operation");
+        }
+        System.out.println("Result: " + result);
+    }
+}
+
+3. Even or Odd
+import java.util.Scanner;
+
+public class EvenOdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        if (num % 2 == 0)
+            System.out.println("Even");
+        else
+            System.out.println("Odd");
+    }
+}
+
+4. Leap year checker
+import java.util.Scanner;
+
+public class LeapYear {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a year: ");
+        int year = sc.nextInt();
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+            System.out.println("Leap Year");
+        else
+            System.out.println("Not a Leap Year");
+    }
+}
+
+5. Multiplication Table
+import java.util.Scanner;
+
+public class Table {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(n + " x " + i + " = " + (n * i));
+        }
+    }
+}
+
+6. Data Type Demostration
+public class DataTypes {
+    public static void main(String[] args) {
+        int a = 10;
+        float b = 5.5f;
+        double c = 123.456;
+        char d = 'A';
+        boolean e = true;
+
+        System.out.println("int: " + a);
+        System.out.println("float: " + b);
+        System.out.println("double: " + c);
+        System.out.println("char: " + d);
+        System.out.println("boolean: " + e);
+    }
+}
+
+7. Type Casting
+public class TypeCasting {
+    public static void main(String[] args) {
+        double d = 9.8;
+        int i = (int) d;
+        System.out.println("Double to int: " + i);
+
+        int j = 5;
+        double dj = j;
+        System.out.println("Int to double: " + dj);
+    }
+}
+
+8. Operator Precedence
+public class Precedence {
+    public static void main(String[] args) {
+        int result = 10 + 5 * 2;
+        System.out.println("Result: " + result); // Outputs 20
+    }
+}
+9. Grade Calculator 
+import java.util.Scanner;
+
+public class GradeCalc {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter marks (out of 100): ");
+        int marks = sc.nextInt();
+
+        if (marks >= 90) System.out.println("Grade A");
+        else if (marks >= 80) System.out.println("Grade B");
+        else if (marks >= 70) System.out.println("Grade C");
+        else if (marks >= 60) System.out.println("Grade D");
+        else System.out.println("Grade F");
+    }
+}
+
+10. Number Guessing Game
+import java.util.*;
+
+public class GuessGame {
+    public static void main(String[] args) {
+        Random rand = new Random();
+        int target = rand.nextInt(100) + 1;
+        Scanner sc = new Scanner(System.in);
+        int guess;
+
+        do {
+            System.out.print("Guess a number (1-100): ");
+            guess = sc.nextInt();
+
+            if (guess < target) System.out.println("Too low!");
+            else if (guess > target) System.out.println("Too high!");
+        } while (guess != target);
+
+        System.out.println("Correct!");
+    }
+}
+
+11. Factorial Calculator 
+import java.util.Scanner;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number: ");
+        int n = sc.nextInt();
+
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+
+        System.out.println("Factorial: " + fact);
+    }
+}
+
+12. Method Overloading
+public class Overload {
+
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    static double add(double a, double b) {
+        return a + b;
+    }
+
+    static int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(add(2, 3));
+        System.out.println(add(2.5, 3.5));
+        System.out.println(add(1, 2, 3));
+    }
+}
+
+13. Recursive Fiboncci
+import java.util.Scanner;
+
+public class Fibonacci {
+    static int fib(int n) {
+        if (n <= 1) return n;
+        return fib(n - 1) + fib(n - 2);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter n: ");
+        int n = sc.nextInt();
+        System.out.println("Fibonacci(" + n + ") = " + fib(n));
+    }
+}
+
+14. Array sum and Average
+import java.util.Scanner;
+
+public class ArraySum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+            sum += arr[i];
+        }
+
+        double avg = (double) sum / n;
+        System.out.println("Sum = " + sum + ", Average = " + avg);
+    }
+}
+
+15. String Reversal
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter string: ");
+        String str = sc.nextLine();
+
+        StringBuilder sb = new StringBuilder(str);
+        System.out.println("Reversed: " + sb.reverse());
+    }
+}
+
+16. Palindrome Checker
+import java.util.Scanner;
+
+public class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter string: ");
+        String s = sc.nextLine().replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+        String rev = new StringBuilder(s).reverse().toString();
+        System.out.println(s.equals(rev) ? "Palindrome" : "Not a Palindrome");
+    }
+}
+
+17. Class and Object Creation
+class Car {
+    String make, model;
+    int year;
+
+    void displayDetails() {
+        System.out.println(year + " " + make + " " + model);
+    }
+}
+
+public class CarTest {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.make = "Toyota";
+        car.model = "Corolla";
+        car.year = 2020;
+        car.displayDetails();
+    }
+}
+
+18. Inheritance Example
+class Animal {
+    void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Inheritance {
+    public static void main(String[] args) {
+        Animal a = new Animal();
+        Dog d = new Dog();
+
+        a.makeSound();
+        d.makeSound();
+    }
+}
+
+19. Interface Implementation
+interface Playable {
+    void play();
+}
+
+class Guitar implements Playable {
+    public void play() {
+        System.out.println("Strumming Guitar");
+    }
+}
+
+class Piano implements Playable {
+    public void play() {
+        System.out.println("Playing Piano");
+    }
+}
+
+public class InterfaceDemo {
+    public static void main(String[] args) {
+        Playable g = new Guitar();
+        Playable p = new Piano();
+
+        g.play();
+        p.play();
+    }
+}
