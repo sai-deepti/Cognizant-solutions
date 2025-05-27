@@ -1,0 +1,82 @@
+HTML :
+1. Base5 template 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Event</title>
+</head>
+<body>
+  <nav></nav>
+  <main>
+    <h1>Welcome</h1>
+  </main>
+  <footer>
+    <p>&copy; 2025</p>
+  </footer>
+</body>
+</html>
+
+
+2. Navigation and linking:
+<nav>
+  <a href="#home">Home</a>
+  <a href="#events">Events</a>
+  <a href="#contact">Contact</a>
+  <a href="help.html" target="_blank">Help</a>
+</nav>
+
+<section id="home"><h2>Home</h2></section>
+<section id="events"><h2>Events</h2></section>
+<section id="contact"><h2>Contact</h2></section>
+
+3. ID , class and styling 
+<style>
+  #welcomeBanner { background: blue; color: white; }
+  .highlight { background: yellow; }
+</style>
+
+<div id="welcomeBanner">
+  <h1>Hello User</h1>
+</div>
+
+<p><span style="color:red;font-weight:bold;">50% Off Today!</span></p>
+<p class="highlight">Weekend Festival</p>
+
+4. Image gallery
+<style>
+  .event-img { border: 2px solid black; width: 150px; }
+</style>
+
+<table border="1">
+  <caption>Event Gallery</caption>
+  <tr>
+    <td><img src="1.jpg" alt="1" class="event-img"></td>
+    <td><img src="2.jpg" alt="2" class="event-img"></td>
+    <td><img src="3.jpg" alt="3" class="event-img"></td>
+  </tr>
+  <tr>
+    <td><img src="4.jpg" alt="4" class="event-img"></td>
+    <td><img src="5.jpg" alt="5" class="event-img"></td>
+    <td><img src="6.jpg" alt="6" class="event-img"></td>
+  </tr>
+</table>
+
+5. Event registration form 
+<style>
+  form { margin: 20px; }
+</style>
+
+<form onsubmit="msg.value='Registered!'; return false;">
+  <input type="text" placeholder="Name" required autofocus><br><br>
+  <input type="email" placeholder="Email" required><br><br>
+  <input type="date" required><br><br>
+  <select required>
+    <option value="">Choose</option>
+    <option>Workshop</option>
+    <option>Seminar</option>
+  </select><br><br>
+  <textarea placeholder="Message"></textarea><br><br>
+  <input type="submit" value="Submit">
+  <output id="msg"></output>
+</form>
