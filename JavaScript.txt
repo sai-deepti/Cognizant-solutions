@@ -1,0 +1,109 @@
+JavaScript :
+
+1. Basics and Setup 
+console.log("Welcome to the Community Portal")
+
+window.onload = function() {
+  alert("Page is fully loaded")
+}
+
+
+2. Syntax , DataTypes and operators
+const eventName = "Tech Meetup"
+const eventDate = "2025-06-10"
+let seats = 50
+
+console.log(`${eventName} on ${eventDate}, Seats: ${seats}`)
+
+seats--
+console.log(`Seats left: ${seats}`)
+
+3. Consitional , loops and error handling
+const events = [
+  { name: "AI Conference", status: "upcoming", seats: 10 },
+  { name: "Old Meetup", status: "completed", seats: 0 }
+]
+
+events.forEach(e => {
+  if (e.status === "upcoming" && e.seats > 0) {
+    console.log(e.name)
+  } else {
+    console.log("Event not available")
+  }
+})
+
+function register(seats) {
+  try {
+    if (seats <= 0) throw "No seats left"
+    console.log("Registered")
+  } catch (err) {
+    console.log(err)
+  }
+}
+register(0)
+
+4. Functions , scopes and closures 
+function addEvent(name) {
+  return { title: name }
+}
+
+function registerUser(eventName) {
+  console.log(`User registered for ${eventName}`)
+}
+
+function filterEventsByCategory(events, callback) {
+  return events.filter(callback)
+}
+
+function categoryCounter() {
+  let count = 0
+  return function() {
+    count++
+    return count
+  }
+}
+
+const musicCount = categoryCounter()
+console.log(musicCount())
+
+5. Objects and Prototypes 
+function Event(title, seats) {
+  this.title = title
+  this.seats = seats
+}
+
+Event.prototype.checkAvailability = function() {
+  return this.seats > 0
+}
+
+const e = new Event("Webinar", 10)
+console.log(e.checkAvailability())
+
+console.log(Object.entries(e))
+
+6. Arrays and Methods 
+const events = [
+  { title: "Music Night", category: "music" },
+  { title: "Baking Workshop", category: "cooking" }
+]
+
+events.push({ title: "Rock Fest", category: "music" })
+
+const musicEvents = events.filter(e => e.category === "music")
+
+const formatted = events.map(e => `Event: ${e.title}`)
+console.log(formatted)
+
+8. Event Handling
+document.getElementById("registerBtn").onclick = function() {
+  alert("Registered")
+}
+
+document.getElementById("category").onchange = function() {
+  console.log("Category changed")
+}
+
+document.getElementById("search").onkeydown = function(e) {
+  console.log("Searching:", e.key)
+}
+ 
